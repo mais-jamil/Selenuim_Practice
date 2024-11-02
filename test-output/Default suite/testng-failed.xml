@@ -5,8 +5,9 @@
     <classes>
       <class name="MyTestCases">
         <methods>
-          <include name="test1"/>
+          <include name="RadioButtons"/>
           <include name="mySetup"/>
+          <include name="DynamicDropDownList"/>
         </methods>
       </class> <!-- MyTestCases -->
     </classes>
