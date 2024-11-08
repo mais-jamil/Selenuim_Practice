@@ -2,7 +2,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -79,31 +78,41 @@ public class MyTestCases {
 	@Test(priority = 4)
 	public void checkbox() {
 		WebElement checkboxDiv = driver.findElement(By.id("checkbox-example"));
-		List <WebElement> myCheackBox = checkboxDiv.findElements(By.xpath("//input[@type='checkbox']"));
-		
-		for(int i=0; i<myCheackBox.size(); i++) {
+		List<WebElement> myCheackBox = checkboxDiv.findElements(By.xpath("//input[@type='checkbox']"));
+
+		for (int i = 0; i < myCheackBox.size(); i++) {
 			myCheackBox.get(i).click();
 		}
 	}
 
 	@Test(priority = 5)
 	public void openWindow() throws InterruptedException {
-		 driver.findElement(By.id("openwindow")).click();
-		 List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
-		 driver.switchTo().window(windowHandles.get(1));
-		 Thread.sleep(2000);
-		 driver.findElement(By.linkText("CONTACT")).click();
-		 Thread.sleep(3000);		 
-		 driver.switchTo().window(windowHandles.get(0));
+		driver.findElement(By.id("openwindow")).click();
+		List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
+		driver.switchTo().window(windowHandles.get(1));
+		Thread.sleep(2000);
+		driver.findElement(By.linkText("CONTACT")).click();
+		Thread.sleep(3000);
+		driver.switchTo().window(windowHandles.get(0));
 	}
-	
+
 	@Test(priority = 6)
 	public void switchTab() throws InterruptedException {
-	
-		driver.findElement(By.id("opentab")).click();;
+
+		driver.findElement(By.id("opentab")).click();
 		List<String> windoHandles = new ArrayList<>(driver.getWindowHandles());
 		driver.switchTo().window(windoHandles.get(2));
-		Thread.sleep(5000);
-		driver.findElement(By.id("endpoint")).click();;
+		Thread.sleep(3000);
+		
+		String ActualValue = driver.getTitle();
+		String expectedValue = "Codenbox AutomationLab - YouTube";
+		
+		org.testng.Assert.assertEquals(ActualValue, expectedValue);
+		
+	}
+	
+	@Test(priority = 7)
+	public void test() {
+		
 	}
 }
