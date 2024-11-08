@@ -85,7 +85,7 @@ public class MyTestCases {
 		}
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5, enabled = false)
 	public void openWindow() throws InterruptedException {
 		driver.findElement(By.id("openwindow")).click();
 		List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
@@ -96,7 +96,7 @@ public class MyTestCases {
 		driver.switchTo().window(windowHandles.get(0));
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled = false)
 	public void switchTab() throws InterruptedException {
 
 		driver.findElement(By.id("opentab")).click();
@@ -112,7 +112,22 @@ public class MyTestCases {
 	}
 	
 	@Test(priority = 7)
-	public void test() {
+	public void switcALERT() throws InterruptedException {
 		
+		driver.findElement(By.id("alertbtn")).click();
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		
+		driver.findElement(By.id("name")).sendKeys("Mais");
+		driver.findElement(By.id("confirmbtn")).click();
+		
+		String ActualMsg = driver.switchTo().alert().getText();
+		String ExpectedMsg = "Hello Mais, Are you sure you want to confirm?";
+		
+		org.testng.Assert.assertEquals(ActualMsg, ExpectedMsg);
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
 	}
+	
+	
 }
