@@ -129,5 +129,63 @@ public class MyTestCases {
 		driver.switchTo().alert().accept();
 	}
 	
+	@Test(priority = 8)
+	public void Table() {
+		
+		WebElement Table =  driver.findElement(By.id("product"));
+		List <WebElement> TableData = Table.findElements(By.tagName("td"));
+		for(int i=1 ; i < TableData.size(); i=i+3) {
+			System.out.println(TableData.get(i).getText());
+		}
+	}
+	
+	@Test(priority = 9)
+	public void ElementDisplayed() throws InterruptedException {
+		
+		WebElement HideBtn = driver.findElement(By.id("hide-textbox"));
+		HideBtn.click();
+		
+		WebElement TextBox = driver.findElement(By.id("displayed-text"));
+		
+		boolean ActualResult = TextBox.isDisplayed();
+		boolean ExpectedResult = false;
+		org.testng.Assert.assertEquals(ActualResult, ExpectedResult);
+		
+		Thread.sleep(2000);
+		
+		WebElement ShowBtn = driver.findElement(By.id("show-textbox"));
+		ShowBtn.click();
+		
+		boolean ActualResult2 = TextBox.isDisplayed();
+		boolean ExpectedResult2 = true;
+		org.testng.Assert.assertEquals(ActualResult2, ExpectedResult2);
+		
+	}
+	
+	@Test(priority = 10)
+	public void Enable_Disable() {
+		
+		WebElement DisableBtn = driver.findElement(By.id("disabled-button"));
+		DisableBtn.click();
+		
+		WebElement TextBox = driver.findElement(By.id("enabled-example-input"));
+		
+		boolean ActualResul = TextBox.isEnabled();
+		boolean ExpectedResult = false;
+		org.testng.Assert.assertEquals(ActualResul, ExpectedResult);
+		
+		WebElement EnabbleBtn = driver.findElement(By.id("enabled-button"));
+		EnabbleBtn.click();
+		
+		boolean ActualResul2 = TextBox.isEnabled();
+		boolean ExpectedResult2 = true;
+		org.testng.Assert.assertEquals(ActualResul2, ExpectedResult2);
+				
+	}
+	
 	
 }
+
+
+
+

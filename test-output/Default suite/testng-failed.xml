@@ -5,8 +5,15 @@
     <classes>
       <class name="MyTestCases">
         <methods>
-          <include name="switchTab"/>
+          <include name="Enable_Disable"/>
+          <include name="RadioButtons"/>
+          <include name="ElementDisplayed"/>
+          <include name="checkbox"/>
+          <include name="switcALERT"/>
           <include name="mySetup"/>
+          <include name="selectTag"/>
+          <include name="DynamicDropDownList"/>
+          <include name="Table"/>
         </methods>
       </class> <!-- MyTestCases -->
     </classes>
