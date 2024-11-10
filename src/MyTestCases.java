@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -26,7 +27,7 @@ public class MyTestCases {
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, enabled = false)
 	public void RadioButtons() {
 		WebElement RadioDiv = driver.findElement(By.id("radio-btn-example"));
 		RadioDiv.findElements(By.tagName("input"));
@@ -42,7 +43,7 @@ public class MyTestCases {
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = false)
 	public void DynamicDropDownList() throws InterruptedException {
 
 		String[] MyRandomCharacter = { "MA", "GH", "SE", "FA", "CR", "RO" };
@@ -65,7 +66,7 @@ public class MyTestCases {
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, enabled = false)
 	public void selectTag() {
 
 		WebElement selectElement = driver.findElement(By.id("dropdown-class-example"));
@@ -75,7 +76,7 @@ public class MyTestCases {
 
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, enabled = false)
 	public void checkbox() {
 		WebElement checkboxDiv = driver.findElement(By.id("checkbox-example"));
 		List<WebElement> myCheackBox = checkboxDiv.findElements(By.xpath("//input[@type='checkbox']"));
@@ -85,7 +86,7 @@ public class MyTestCases {
 		}
 	}
 
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = true)
 	public void openWindow() throws InterruptedException {
 		driver.findElement(By.id("openwindow")).click();
 		List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
@@ -94,9 +95,11 @@ public class MyTestCases {
 		driver.findElement(By.linkText("CONTACT")).click();
 		Thread.sleep(3000);
 		driver.switchTo().window(windowHandles.get(0));
+		Thread.sleep(3000);
+
 	}
 
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public void switchTab() throws InterruptedException {
 
 		driver.findElement(By.id("opentab")).click();
@@ -108,10 +111,15 @@ public class MyTestCases {
 		String expectedValue = "Codenbox AutomationLab - YouTube";
 		
 		org.testng.Assert.assertEquals(ActualValue, expectedValue);
-		
+		System.out.println( driver.getTitle());
+		Thread.sleep(2000);
+		driver.switchTo().window(windoHandles.get(0));
+		System.out.println( driver.getTitle());
+
+
 	}
 	
-	@Test(priority = 7)
+	@Test(priority = 7, enabled = false)
 	public void switcALERT() throws InterruptedException {
 		
 		driver.findElement(By.id("alertbtn")).click();
@@ -129,7 +137,7 @@ public class MyTestCases {
 		driver.switchTo().alert().accept();
 	}
 	
-	@Test(priority = 8)
+	@Test(priority = 8, enabled = false)
 	public void Table() {
 		
 		WebElement Table =  driver.findElement(By.id("product"));
@@ -139,7 +147,7 @@ public class MyTestCases {
 		}
 	}
 	
-	@Test(priority = 9)
+	@Test(priority = 9, enabled = false)
 	public void ElementDisplayed() throws InterruptedException {
 		
 		WebElement HideBtn = driver.findElement(By.id("hide-textbox"));
@@ -162,7 +170,7 @@ public class MyTestCases {
 		
 	}
 	
-	@Test(priority = 10)
+	@Test(priority = 10, enabled = false)
 	public void Enable_Disable() {
 		
 		WebElement DisableBtn = driver.findElement(By.id("disabled-button"));
@@ -182,6 +190,23 @@ public class MyTestCases {
 		org.testng.Assert.assertEquals(ActualResul2, ExpectedResult2);
 				
 	}
+	
+	@Test(priority = 11, enabled = true)
+	public void Mouse_Hover() {
+		
+		JavascriptExecutor JS = (JavascriptExecutor) driver;
+		JS.executeScript("window.scrollTo(0, 1750)");
+		
+		Actions action = new Actions(driver);
+		
+		WebElement mouseHoverBtn = driver.findElement(By.id("mousehover"));
+		
+		action.moveToElement(mouseHoverBtn).perform();
+		driver.findElement(By.linkText("Reload")).click();
+		
+	}
+	
+	
 	
 	
 }

@@ -1,48 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="10" passed="8" failed="0" skipped="0">
+<testng-results ignored="8" total="11" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-09T01:37:06 EET" name="Default suite" finished-at="2024-11-09T01:37:30 EET" duration-ms="23872">
+  <suite started-at="2024-11-10T22:10:41 EET" name="Default suite" finished-at="2024-11-10T22:11:23 EET" duration-ms="42057">
     <groups>
     </groups>
-    <test started-at="2024-11-09T01:37:06 EET" name="Default test" finished-at="2024-11-09T01:37:30 EET" duration-ms="23872">
+    <test started-at="2024-11-10T22:10:41 EET" name="Default test" finished-at="2024-11-10T22:11:23 EET" duration-ms="42057">
       <class name="MyTestCases">
-        <test-method is-config="true" signature="mySetup()[pri:0, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:06 EET" name="mySetup" finished-at="2024-11-09T01:37:21 EET" duration-ms="14287" status="PASS">
+        <test-method is-config="true" signature="mySetup()[pri:0, instance:MyTestCases@39a8312f]" started-at="2024-11-10T22:10:41 EET" name="mySetup" finished-at="2024-11-10T22:10:53 EET" duration-ms="11462" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mySetup -->
-        <test-method signature="RadioButtons()[pri:1, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:21 EET" name="RadioButtons" finished-at="2024-11-09T01:37:21 EET" duration-ms="207" status="PASS">
+        <test-method signature="openWindow()[pri:5, instance:MyTestCases@39a8312f]" started-at="2024-11-10T22:10:53 EET" name="openWindow" finished-at="2024-11-10T22:11:06 EET" duration-ms="13636" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RadioButtons -->
-        <test-method signature="DynamicDropDownList()[pri:2, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:21 EET" name="DynamicDropDownList" finished-at="2024-11-09T01:37:22 EET" duration-ms="1278" status="PASS">
+        </test-method> <!-- openWindow -->
+        <test-method signature="switchTab()[pri:6, instance:MyTestCases@39a8312f]" started-at="2024-11-10T22:11:06 EET" name="switchTab" finished-at="2024-11-10T22:11:19 EET" duration-ms="12953" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DynamicDropDownList -->
-        <test-method signature="selectTag()[pri:3, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:22 EET" name="selectTag" finished-at="2024-11-09T01:37:22 EET" duration-ms="229" status="PASS">
+        </test-method> <!-- switchTab -->
+        <test-method signature="Mouse_Hover()[pri:11, instance:MyTestCases@39a8312f]" started-at="2024-11-10T22:11:19 EET" name="Mouse_Hover" finished-at="2024-11-10T22:11:23 EET" duration-ms="3928" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectTag -->
-        <test-method signature="checkbox()[pri:4, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:22 EET" name="checkbox" finished-at="2024-11-09T01:37:23 EET" duration-ms="330" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkbox -->
-        <test-method signature="switcALERT()[pri:7, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:23 EET" name="switcALERT" finished-at="2024-11-09T01:37:27 EET" duration-ms="4527" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- switcALERT -->
-        <test-method signature="Table()[pri:8, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:27 EET" name="Table" finished-at="2024-11-09T01:37:28 EET" duration-ms="287" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Table -->
-        <test-method signature="ElementDisplayed()[pri:9, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:28 EET" name="ElementDisplayed" finished-at="2024-11-09T01:37:30 EET" duration-ms="2326" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ElementDisplayed -->
-        <test-method signature="Enable_Disable()[pri:10, instance:MyTestCases@6492fab5]" started-at="2024-11-09T01:37:30 EET" name="Enable_Disable" finished-at="2024-11-09T01:37:30 EET" duration-ms="298" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Enable_Disable -->
+        </test-method> <!-- Mouse_Hover -->
       </class> <!-- MyTestCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
