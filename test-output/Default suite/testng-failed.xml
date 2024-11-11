@@ -5,7 +5,7 @@
     <classes>
       <class name="MyTestCases">
         <methods>
-          <include name="switchTab"/>
+          <include name="iFrame"/>
           <include name="mySetup"/>
         </methods>
       </class> <!-- MyTestCases -->

@@ -86,7 +86,7 @@ public class MyTestCases {
 		}
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	public void openWindow() throws InterruptedException {
 		driver.findElement(By.id("openwindow")).click();
 		List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
@@ -99,7 +99,7 @@ public class MyTestCases {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 6, enabled = false)
 	public void switchTab() throws InterruptedException {
 
 		driver.findElement(By.id("opentab")).click();
@@ -191,7 +191,7 @@ public class MyTestCases {
 				
 	}
 	
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 11, enabled = false)
 	public void Mouse_Hover() {
 		
 		JavascriptExecutor JS = (JavascriptExecutor) driver;
@@ -206,7 +206,28 @@ public class MyTestCases {
 		
 	}
 	
+	@Test(priority = 12, enabled = false)
+	public void calendar() throws InterruptedException {
+		
+		WebElement BookingCalendar = driver.findElement(By.linkText("Booking Calendar"));
+		BookingCalendar.click();
+		
+
+		}
 	
+	@Test(priority = 13)
+	public void iFrame() throws InterruptedException {
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver ; 
+		js.executeScript("window.scrollTo(0,2400)");
+		
+		WebElement myFrame = driver.findElement(By.id("courses-iframe"));
+		driver.switchTo().frame(myFrame);
+		
+		driver.findElement(By.cssSelector(".ct-mobile-meta-item.btn-nav-mobile.open-menu")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector(".ct-mobile-meta-item.btn-nav-mobile.open-menu.opened")).click();
+	}
 	
 	
 }
